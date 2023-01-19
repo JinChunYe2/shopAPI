@@ -1,12 +1,7 @@
-const Koa = require("koa");
-
-const app = new Koa();
-
+// 引入项目配置
 const { APP_PORT } = require("./config/config.default.js");
 
-app.use((ctx) => {
-  ctx.body = "hello world";
-});
+const app = require("./app/index");
 
 app.listen(APP_PORT, () => {
   console.log(`is server http://127.0.0.1:${APP_PORT}`);
